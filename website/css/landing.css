@@ -81,8 +81,12 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: 
 .why li:last-child { border-bottom: 1px solid var(--line); }
 .why b { color: var(--ink); font-weight: 600; }
 .note { color: var(--mute); font-size: 14px; margin-top: 22px; }
-.bottom { padding: 34px var(--gut) 44px; border-top: 1px solid var(--line); color: var(--mute); font-size: 13px; }
-.bottom .in { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.bottom { padding: clamp(50px, 8vw, 110px) var(--gut) 28px; border-top: 1px solid var(--line); color: var(--mute); font-size: 14px; overflow: hidden; }
+.bottom .in { max-width: none; }
+.foot-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px 24px; flex-wrap: wrap; font-size: clamp(14px, 1.3vw, 17px); }
+.made { color: var(--soft); } .made b { color: var(--ink); font-weight: 600; }
+.foot-wm { font-family: var(--display); font-size: 36.6vw; line-height: .8; letter-spacing: -.014em; color: var(--ink); text-align: center; padding-right: 1.2vw; margin: clamp(22px, 4vw, 56px) 0 clamp(26px, 4.4vw, 64px); white-space: nowrap; user-select: none; }
+.foot-note { margin: 0; text-align: center; font-size: 13px; }
 
 /* ---------------- mobile ---------------- */
 @media (max-width: 760px) {
