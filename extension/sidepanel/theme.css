@@ -30,6 +30,7 @@
   --scrim: rgba(10, 10, 10, .66);
   --bar: rgba(10, 10, 10, .72);
   --blob: 1;
+  --scene-op: 1;
   --grain: .05;
 }
 
@@ -49,6 +50,7 @@
   --scrim: rgba(251, 251, 249, .78);
   --bar: rgba(251, 251, 249, .8);
   --blob: .5;
+  --scene-op: 1;
   --grain: .035;
 }
 

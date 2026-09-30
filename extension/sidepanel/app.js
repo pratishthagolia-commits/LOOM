@@ -110,11 +110,15 @@
 
   /* ---------- settings ---------- */
   function applySettings() {
-    const resolved = FF.setTheme(document.documentElement, settings.theme);
+    // with a scene on, the text colour follows the picture (light text on dark scenes, dark on light ones)
+    const scn = CONFIG.SCENES.find((x) => x.id === settings.scene);
+    const resolved = scn && scn.src ? FF.setTheme(document.documentElement, scn.tone) : FF.setTheme(document.documentElement, settings.theme);
     $('#themeBtn').innerHTML = resolved === 'dark' ? ICON_SUN : ICON_MOON;
     $('#themeBtn').setAttribute('aria-label', resolved === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     document.documentElement.dataset.quiet = isQuiet() ? '1' : '0';
     document.documentElement.style.fontSize = 16 * settings.fontScale + 'px';
+    const sc = CONFIG.SCENES.find((x) => x.id === settings.scene) || CONFIG.SCENES[0], box = $('#scene');
+    if (sc.src) { box.style.backgroundImage = 'url(' + chrome.runtime.getURL(sc.src) + ')'; box.classList.add('on'); } else box.classList.remove('on');
     music.setVolume(settings.volume);
   }
   matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => { if (settings && settings.theme === 'auto') applySettings(); });
@@ -546,6 +550,11 @@
       b.addEventListener('click', () => { updateSettings({ theme: id }); renderSettings(); });
       return b;
     }));
+    $('#sceneRow').replaceChildren(...CONFIG.SCENES.map((sc) => {
+      const b = el('button', 'chip' + ((settings.scene || 'cozy') === sc.id ? ' on' : ''), sc.name); b.type = 'button'; b.setAttribute('aria-pressed', String((settings.scene || 'cozy') === sc.id));
+      b.addEventListener('click', () => { updateSettings({ scene: sc.id }); renderSettings(); });
+      return b;
+    }));
     $('#petRow').replaceChildren(...CONFIG.PETS.map((p) => {
       const b = el('button', 'pet-t' + (settings.pet === p.id ? ' on' : '')); b.type = 'button'; b.setAttribute('aria-pressed', String(settings.pet === p.id));
       b.append(FF.petEl(p.id, 'idle', 64), el('b', '', p.name), el('em', '', p.line));
@@ -708,7 +717,11 @@
     if (settings.musicOn) updateSettings({ musicOn: false }); // nothing is playing after a reload
 
     bindGoal(); bindFocus(); bindSettings(); bindPlayer(); bindFiles();
-    $('#themeBtn').addEventListener('click', () => { updateSettings({ theme: FF.resolveTheme(settings.theme) === 'dark' ? 'light' : 'dark' }); if (tab === 'settings') renderSettings(); });
+    $('#themeBtn').addEventListener('click', () => {
+      // the theme button only matters on a plain background: with a scene on, turn the scene off first
+      const next = FF.resolveTheme(settings.theme) === 'dark' ? 'light' : 'dark';
+      updateSettings({ theme: next, scene: 'off' }); toast('Scene off. Pick one again in Settings.'); if (tab === 'settings') renderSettings();
+    });
     renderGoal(); renderFocus(); renderNotes(); renderBubble(); updatePlayer();
     store.onChange(onStorage);
 

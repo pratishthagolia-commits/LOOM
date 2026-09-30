@@ -9,6 +9,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 /* ---------- ambient blobs: soft, slow, background only ---------- */
 .blobs { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.scene { position: absolute; inset: 0; background: center bottom / cover no-repeat; opacity: 0; transition: opacity .6s ease; }
+.scene.on { opacity: var(--scene-op); }
 .b { position: absolute; border-radius: 50%; filter: blur(90px); opacity: calc(var(--blob) * .32); will-change: transform; animation: drift var(--t, 50s) ease-in-out infinite alternate; }
 .b1 { width: 340px; height: 340px; left: -130px; top: -90px; background: var(--coral); --t: 54s; }
 .b2 { width: 300px; height: 300px; right: -140px; top: 90px; background: var(--pink); --t: 46s; animation-delay: -16s; opacity: calc(var(--blob) * .24); }
@@ -271,3 +273,4 @@ body.dragging::after { content: "Drop your file to read it"; position: fixed; in
   .tile, .btn-primary, .chip, .pet-t, .link span, .cta span, .cta i, .opts button, .round { transition: none !important; }
   .confetti { display: none; }
 }
+[data-theme="light"] 

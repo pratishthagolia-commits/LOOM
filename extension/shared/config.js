@@ -19,6 +19,14 @@
       light: { name: 'Light', bg: '#fbfbf9', surface: '#ffffff', line: 'rgba(11,11,11,.12)', text: '#0b0b0b', muted: 'rgba(11,11,11,.62)', accent: '#e0207f', onAccent: '#ffffff', glass: 'rgba(11,11,11,.05)' },
     },
 
+    // Optional scene behind the panel (files in assets/backgrounds). 'off' = plain colour + blobs.
+    SCENES: [
+      { id: 'cozy', name: 'Cozy room', src: 'assets/backgrounds/cozy.webp', tone: 'dark' },
+      { id: 'night', name: 'Rainy night', src: 'assets/backgrounds/night.webp', tone: 'dark' },
+      { id: 'sage', name: 'Pastel forest', src: 'assets/backgrounds/sage.webp', tone: 'light' },
+      { id: 'off', name: 'Off', src: '' },
+    ],
+
     // kind 'synth' works with no files. kind 'file' shows up only if the mp3 exists.
     TRACKS: [
       { id: 'focus-flow', name: 'Focus Flow', kind: 'file', src: 'assets/music/focus-flow.mp3' },
@@ -41,7 +49,7 @@
 
     DEFAULTS: {
       settings: {
-        theme: 'auto', pet: 'pup', petOnPage: true,
+        theme: 'auto', scene: 'cozy', pet: 'pup', petOnPage: true,
         nudgeEveryMin: 10, quiet: false, quietUntil: 0,
         track: 'focus-flow', volume: 0.5, musicOn: false, duck: true,
         ttsRate: 1, fontScale: 1, bionic: false,
