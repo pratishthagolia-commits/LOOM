@@ -131,7 +131,7 @@ body:not(.settled) .h1 { animation: settle .8s var(--spring) .1s both; }
 .key .lab { margin: 0 0 6px; }
 .key p:last-child { margin: 0; font-weight: 600; }
 .dump { margin: 4px 0 10px; }
-.actions { position: sticky; bottom: -16px; z-index: 5; display: flex; flex-direction: column; align-items: center; gap: 0; margin: 10px -20px -16px; padding: 14px 20px 14px; background: linear-gradient(to top, var(--bg) 66%, transparent); }
+.actions { position: sticky; bottom: -16px; z-index: 5; display: flex; flex-direction: column; align-items: center; gap: 0; margin: 10px -20px -16px; padding: 14px 20px 14px; background: none; }
 .actions .btn-primary { margin-top: 0; }
 
 /* ---------- check-in ---------- */
@@ -169,7 +169,7 @@ body:not(.settled) .h1 { animation: settle .8s var(--spring) .1s both; }
 .x:hover { color: var(--text); background: var(--surface-2); }
 svg { display: block; }
 .x svg, .bx svg, .go svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
-.capture { position: sticky; bottom: -16px; z-index: 5; display: grid; grid-template-columns: 1fr 52px; grid-template-areas: "text go" "due due"; gap: 8px; margin: 22px -20px -16px; padding: 18px 20px 14px; background: linear-gradient(to top, var(--bg) 70%, transparent); }
+.capture { position: sticky; bottom: -16px; z-index: 5; display: grid; grid-template-columns: 1fr 52px; grid-template-areas: "text go" "due due"; gap: 8px; margin: 22px -20px -16px; padding: 18px 20px 14px; background: none; }
 .capture #noteText { grid-area: text; }
 .capture .go { grid-area: go; }
 .capture .due { grid-area: due; min-height: 44px; font-size: .88rem; color: var(--muted); }
@@ -237,9 +237,9 @@ input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-of
 @keyframes pop-dot { from { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } to { opacity: 0; transform: translate3d(var(--dx), var(--dy), 0) scale(.3); } }
 
 /* ---------- listening bar + player ---------- */
-.ttsbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 2px 20px; font-size: .78rem; color: var(--muted); background: var(--bar); border-top: 1px solid var(--line); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.ttsbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 2px 20px; font-size: .78rem; color: var(--muted); }
 .ttsbar .link { min-height: 36px; margin-left: 14px; font-size: .64rem; }
-.player { display: flex; align-items: center; gap: 12px; padding: 10px 16px; background: var(--bar); border-top: 1px solid var(--line); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+.player { display: flex; align-items: center; gap: 12px; padding: 10px 16px; }
 .player .play svg { width: 18px; height: 18px; fill: currentColor; stroke: none; }
 .soundpick { position: relative; flex: 1; min-width: 0; }
 #trackSel { -webkit-appearance: none; appearance: none; width: 100%; min-height: 44px; padding: 0 46px 0 18px; background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--r-pill); color: var(--text); font-weight: 600; font-size: .92rem; cursor: pointer; text-overflow: ellipsis; }
