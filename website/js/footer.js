@@ -1,5 +1,13 @@
 // Footer wordmark: the five colour layers under the big "Loom" lean toward the cursor at different depths.
 (function () {
+  // the fixed nav borrows the footer's colour while it is over it (no pale bar cutting through the grey)
+  const nav = document.querySelector('.nav'), ft = document.getElementById('footer');
+  if (nav && ft) {
+    let tick = 0;
+    const upd = () => { tick = 0; nav.classList.toggle('on-foot', ft.getBoundingClientRect().top < 40); };
+    addEventListener('scroll', () => { if (!tick) tick = requestAnimationFrame(upd); }, { passive: true });
+    upd();
+  }
   const wm = document.getElementById('fwm'), foot = document.getElementById('footer');
   if (!wm || matchMedia('(prefers-reduced-motion: reduce)').matches || matchMedia('(pointer: coarse)').matches) return;
   const L = Array.from(wm.querySelectorAll('.fl')), base = [0.055, 0.105, 0.155, 0.205, 0.255], reach = [0.02, 0.04, 0.065, 0.095, 0.13];
