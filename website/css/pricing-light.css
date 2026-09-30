@@ -1,0 +1,68 @@
+/* Pricing page: light only. Loaded after pricing.css and re-themes its tokens + the few hard-coded dark colours. */
+:root {
+  --bg: #fcfcfa; --surface: #ffffff; --text: #0b0b0b; --muted: #66665f;
+  --line: rgba(11,11,11,.10); --line-2: rgba(11,11,11,.18);
+  --nav-bg: rgba(252,252,250,.8); --hover-bg: rgba(11,11,11,.06);
+  color-scheme: light;
+}
+body { background: radial-gradient(1000px 560px at 50% -10%, rgba(255,184,0,.14), transparent 62%), var(--bg); }
+.grain, .spot { display: none; }
+.mut { color: #a3a39c; }
+.logo { color: var(--text); }
+.pill--y, .pill--y:hover { color: #171100; }
+
+/* the physical switch: a light track with the same metal thumb */
+.aud { background: linear-gradient(180deg, #e4e4df, #f2f2ee); box-shadow: inset 0 3px 7px rgba(11,11,11,.16), 0 1px 0 #fff, 0 18px 34px -18px rgba(11,11,11,.25); }
+.aud button { color: #6d6d66; }
+.aud button[aria-checked="true"] { color: #121214; }
+
+/* cards */
+.card { background: #fff; border-color: var(--line); box-shadow: 0 1px 2px rgba(11,11,11,.04), 0 30px 60px -40px rgba(11,11,11,.28); }
+.card:hover { box-shadow: 0 1px 2px rgba(11,11,11,.05), 0 40px 80px -34px var(--glow); }
+.card::before { background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 0%), rgba(11,11,11,.32), transparent 42%); }
+.plan--feat .card { background: linear-gradient(180deg, #fff6d6, #fffdf6 46%); border-color: rgba(255,184,0,.5); }
+.feats li { color: #34342f; }
+.tag { color: var(--muted); }
+.cur { color: var(--muted); }
+.cta--ghost { color: var(--text); background: rgba(11,11,11,.03); border-color: var(--line-2); }
+.cta--orange { color: #b5470b; background: rgba(255,122,47,.07); }
+.cta--orange:hover { color: #7a2d00; }
+.rec-flag { color: var(--text); }
+
+/* timeline */
+.tl-line { background: linear-gradient(90deg, transparent, rgba(11,11,11,.3) 8%, rgba(11,11,11,.3) 92%, transparent); }
+.tl-ticks { background: repeating-linear-gradient(90deg, rgba(11,11,11,.22) 0 1px, transparent 1px 14px); }
+
+/* marquee */
+.m-item { color: #0b0b0b; opacity: .3; }
+
+/* compare table */
+.cmp-wrap { background: #fff; }
+.cmp thead th { background: rgba(252,252,250,.92); }
+.cmp th[scope="row"] { color: #1c1c1a; }
+.cmp td.txt { color: #34342f; }
+.cmp .no { color: #b4b4ac; }
+.cmp td:nth-child(4), .cmp th:nth-child(4) { background: linear-gradient(180deg, rgba(255,200,40,.16), rgba(255,200,40,.07)); }
+.cmp thead th:nth-child(4) { background: linear-gradient(180deg, #ffefb8, #fff6d6); }
+.cmp th.ft em { color: #8a5a00; }
+
+/* size your campus */
+.groove { background: linear-gradient(180deg, #dcdcd6, #ecece7); box-shadow: inset 0 3px 6px rgba(11,11,11,.22), 0 1px 0 #fff; }
+.rec-line b { color: var(--text); background: rgba(11,11,11,.07); }
+.rec-line[data-plan="pilot"] b { background: rgba(47,230,166,.22); color: #0a6b4b; }
+.rec-line[data-plan="university"] b { background: rgba(255,200,40,.3); color: #7a4d00; }
+.rec-line[data-plan="enterprise"] b { background: rgba(255,122,47,.2); color: #a8420a; }
+.rail-ticks { color: var(--muted); }
+
+/* FAQ */
+.q { color: var(--text); }
+.q:hover span { color: #b06600; }
+.pm { background: linear-gradient(180deg, #fff, #eeeee9); box-shadow: inset 0 1px 0 #fff, 0 6px 14px -6px rgba(11,11,11,.3); }
+.pm::before, .pm::after { background: #0b0b0b; }
+
+/* closing banner */
+.final { background: radial-gradient(70% 90% at 50% 105%, rgba(255,184,0,.34), transparent 70%), radial-gradient(50% 70% at 10% 0%, rgba(255,122,47,.12), transparent 70%), radial-gradient(50% 70% at 92% 10%, rgba(59,130,255,.1), transparent 70%), #fff; border-color: var(--line); }
+.foot { color: #77776f; }
+:focus-visible { outline-color: #b06600; }
+.linkbtn { color: #a86000; }
+.hl .halftone { color: #f2a900; }
