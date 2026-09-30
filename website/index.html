@@ -164,15 +164,40 @@
   </section>
 </main>
 
-<footer class="bottom">
-  <div class="in">
-    <div class="foot-top">
-      <span class="made"><b>Made by:</b> Komali, Mehak, Pratishtha, Piotr, Jotham</span>
-      <span>Made at MERIThon · Vilnius Tech</span>
+<footer class="bottom" id="footer">
+  <div class="fcols">
+    <nav class="fcol" aria-label="Explore">
+      <p class="fh">Explore</p>
+      <a href="./">Product</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="#install">Install</a>
+    </nav>
+    <div class="fcol">
+      <p class="fh">Made by</p>
+      <span>Komali</span>
+      <span>Mehak</span>
+      <span>Pratishtha</span>
+      <span>Piotr</span>
+      <span>Jotham</span>
     </div>
-    <div class="foot-wm" aria-hidden="true">Loom</div>
-    <p class="foot-note">A study-support tool, not a medical product or treatment.</p>
+    <nav class="fcol" aria-label="Resources">
+      <p class="fh">Resources</p>
+      <a href="loom-extension.zip" download>Download extension</a>
+      <a href="https://github.com/pratishthagolia-commits/LOOM" target="_blank" rel="noopener">Source code</a>
+    </nav>
+    <div class="fcol fcol-r">
+      <p class="fh">About</p>
+      <span>Made at MERIThon</span>
+      <span>Vilnius Tech</span>
+      <span class="fsmall">A study-support tool, not a medical product or treatment.</span>
+    </div>
   </div>
+  <div class="fwm" id="fwm">
+    <span class="fl fl1" aria-hidden="true">Loom</span><span class="fl fl2" aria-hidden="true">Loom</span><span class="fl fl3" aria-hidden="true">Loom</span><span class="fl fl4" aria-hidden="true">Loom</span><span class="fl fl5" aria-hidden="true">Loom</span>
+    <div class="foot-wm" aria-hidden="true">Loom</div>
+  </div>
+  <div class="fbase"><span>© 2026 Loom</span><span>your thoughts woven.</span></div>
 </footer>
 
 <script src="js/aura.js"></script>
@@ -180,6 +205,7 @@
 <script src="js/hero.js"></script>
 <script src="js/reveal.js"></script>
 <script src="js/poster.js"></script>
+<script src="js/footer.js"></script>
 <script>
   // buddies wave when hovered
   document.querySelectorAll('.buddy img[data-hover]').forEach(function (img) {
