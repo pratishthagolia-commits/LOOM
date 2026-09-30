@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="focusflow-site" content="1">
+  <meta name="theme-color" content="#f7f6f2">
+  <script>try{var t=localStorage.getItem("ff-dash-theme")||"light";if(t==="auto")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}</script>
+  <title>Dashboard · Loom</title>
+  <link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/pricing.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="spot" id="spot" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo" href="./">Loom</a>
+  <nav class="links" aria-label="Main">
+    <a href="./">Product</a>
+    <a href="dashboard.html" aria-current="page">Dashboard</a>
+    <a href="pricing.html">Pricing</a>
+  </nav>
+  <a class="pill pill--y" href="index.html#install">Try for free</a>
+</header>
+
+<main class="wrap dash" id="main">
+  <div class="dash-head">
+    <div>
+      <p class="eyebrow eyebrow--l"><i></i>Your dashboard</p>
+      <h1 class="dh">How it's going.</h1>
+      <p class="goal-line" id="goalLine"></p>
+    </div>
+    <div class="head-r">
+      <div class="seg" role="group" aria-label="Dashboard theme"><button type="button" data-th="light" aria-pressed="true">Light</button><button type="button" data-th="dark" aria-pressed="false">Dark</button></div>
+      <span id="status" class="status">Checking for the extension…</span>
+    </div>
+  </div>
+
+  <div id="connect" class="banner" hidden>
+    <h2 id="connectTitle">Connect your extension</h2>
+    <div id="connectBody"></div>
+    <div class="row">
+      <button class="btn-s" id="btnRetry" type="button">Try again</button>
+      <label class="btn-s btn-s--ghost">Import export file<input type="file" id="fileImport" accept="application/json" hidden></label>
+      <span class="mute">Showing demo data until you're connected.</span>
+    </div>
+  </div>
+
+  <div class="tiles" id="tiles"></div>
+
+  <div class="cols">
+    <section class="panel" aria-labelledby="h-week">
+      <p class="eyebrow eyebrow--l"><i></i>Last 7 days</p>
+      <h2 id="h-week">Focus minutes</h2>
+      <p class="sub-s" id="weekSub"></p>
+      <div class="bars" id="bars" role="img" aria-label="Bar chart of focus minutes per day"></div>
+    </section>
+    <section class="panel" aria-labelledby="h-adapt">
+      <p class="eyebrow eyebrow--l"><i></i>Adapting to you</p>
+      <h2 id="h-adapt">What you tapped</h2>
+      <p class="sub-s">After each step</p>
+      <div class="fb" id="fb"></div>
+      <div class="insight" id="insight"></div>
+    </section>
+  </div>
+
+  <section class="panel panel--wide" aria-labelledby="h-notes">
+    <p class="eyebrow eyebrow--l"><i></i>Notes &amp; deadlines</p>
+    <h2 id="h-notes">Parked here, off your mind.</h2>
+    <p class="sub-s" id="notesSub">Synced with the extension.</p>
+    <form class="addnote" id="noteForm">
+      <input type="text" id="noteText" placeholder="Something to remember…" maxlength="200" required aria-label="Note">
+      <input type="datetime-local" id="noteDue" aria-label="Due date">
+      <button class="btn-s btn-s--y" type="submit">Add</button>
+    </form>
+    <ul class="notes" id="notes"></ul>
+    <p class="mute" id="notesEmpty">Nothing saved yet. Your future self says thanks.</p>
+  </section>
+
+  <section class="panel panel--wide" aria-labelledby="h-set">
+    <p class="eyebrow eyebrow--l"><i></i>Settings</p>
+    <h2 id="h-set">Make it yours.</h2>
+    <p class="sub-s">The same options as the extension. Changes apply instantly.</p>
+    <div class="settings" id="settings"></div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <span>Loom · Made at MERIThon · Vilnius Tech</span>
+  <span>A study-support tool, not a medical product.</span>
+</footer>
+
+<script src="js/smooth.js"></script>
+<script src="js/bridge.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

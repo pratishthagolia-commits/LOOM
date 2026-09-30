@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050506">
+  <title>Pricing · Loom</title>
+  <meta name="description" content="From one student to a whole campus. Pick your Loom plan.">
+  <link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/pricing.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="spot" id="spot" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo" href="./">Loom</a>
+  <nav class="links" aria-label="Main">
+    <a href="./">Product</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="pricing.html" aria-current="page">Pricing</a>
+  </nav>
+  <a class="pill pill--y" href="index.html#install">Try for free</a>
+</header>
+
+<main id="main">
+  <!-- ===================== HERO ===================== -->
+  <section class="hero wrap">
+    <h1 class="hl" id="hl">Pick your plan.|Add focus.</h1>
+    <p class="sub">From one student to a whole campus. Same brain, different-sized backpack.</p>
+
+    <div class="aud" id="aud" role="radiogroup" aria-label="Who is it for?" data-v="uni">
+      <span class="thumb" aria-hidden="true"></span>
+      <button type="button" role="radio" aria-checked="false" tabindex="-1" data-v="students">Students</button>
+      <button type="button" role="radio" aria-checked="true" tabindex="0" data-v="uni">Universities</button>
+    </div>
+  </section>
+
+  <!-- ===================== PLANS ===================== -->
+  <section class="plans-wrap wrap" id="plans" aria-label="Plans">
+    <div class="timeline" id="tl" aria-hidden="true"><i class="tl-line"></i><i class="tl-ticks"></i><span class="tl-head" id="tlHead"></span></div>
+    <div class="plans" id="plans-grid" data-aud="uni">
+      <div class="plan" data-g="s" data-plan="student">
+        <article class="card" data-plan="student" aria-labelledby="n-student">
+          <span class="rec-flag">Best fit for you</span>
+          <div class="charm charm--blue" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="12.5" r="6.2"/><path d="M11.5 29c0-6.4 5.2-9.6 12.5-9.6S36.5 22.6 36.5 29v3h-25z"/><rect x="14.5" y="30.5" width="19" height="11" rx="2" fill-opacity=".92"/><path d="M9.5 42.5h29l-2.2 2.6H11.7z"/></svg></div>
+          <p class="tag">For Individual Students</p>
+          <h3 class="pname" id="n-student">Student</h3>
+          <p class="pline">Personal learning extension</p>
+          <div class="price"><span class="cur">€</span><span class="amt num" data-to="4.99" data-dec="2">4.99</span><span class="per">/ month</span></div>
+          <ul class="feats"><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Browser extension (Chrome / Edge)</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Summarise and explain any study content</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Personalised learning plan</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Optional Listen Mode (TTS)</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Sync across devices</span></li></ul>
+          <a class="cta cta--blue" href="index.html#install"><span>Get Loom</span><i aria-hidden="true">→</i></a>
+        </article>
+      </div>
+      <div class="plan" data-g="u" data-plan="pilot">
+        <article class="card" data-plan="pilot" aria-labelledby="n-pilot">
+          <span class="rec-flag">Best fit for you</span>
+          <div class="charm charm--mint" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="14.5" r="6.4"/><path d="M12.5 35c0-6.6 5-10 11.5-10s11.5 3.4 11.5 10v3h-23z"/><circle cx="10.5" cy="20" r="4.4" fill-opacity=".8"/><circle cx="37.5" cy="20" r="4.4" fill-opacity=".8"/><path d="M2.5 35.5c0-4.6 3-7.2 7.6-7.2 1 0 1.9.1 2.7.4-2 1.7-3.1 4-3.3 6.8v2H2.5z" fill-opacity=".8"/><path d="M45.5 35.5c0-4.6-3-7.2-7.6-7.2-1 0-1.9.1-2.7.4 2 1.7 3.1 4 3.3 6.8v2h7z" fill-opacity=".8"/></svg></div>
+          <p class="tag">For Departments / Courses</p>
+          <h3 class="pname" id="n-pilot">Pilot</h3>
+          <p class="pline">Get started and test with a smaller group</p>
+          <div class="price"><span class="cur">€</span><span class="amt num" data-to="499" data-dec="0">499</span><span class="per">/ semester</span></div>
+          <ul class="feats"><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Up to 500 students</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Moodle integration</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Adaptive learning</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Basic analytics</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Email support</span></li></ul>
+          <a class="cta cta--ghost" href="mailto:hello@focusflow.example?subject=Loom%20Pilot"><span>Get started</span><i aria-hidden="true">→</i></a>
+        </article>
+      </div>
+      <div class="plan plan--feat" data-g="u" data-plan="university">
+        <article class="card" data-plan="university" aria-labelledby="n-university">
+          <span class="badge">★ Most popular</span><span class="rec-flag">Best fit for you</span>
+          <div class="charm charm--yellow" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5.5 3.5 17.5h41z"/><rect x="8" y="21" width="6" height="15" rx="1.2"/><rect x="17.5" y="21" width="6" height="15" rx="1.2"/><rect x="26.5" y="21" width="6" height="15" rx="1.2"/><rect x="36" y="21" width="4.4" height="15" rx="1.2"/><rect x="4.5" y="38.5" width="39" height="5" rx="1.6"/></svg></div>
+          <p class="tag">For full department or university-wide use</p>
+          <h3 class="pname" id="n-university">University</h3>
+          <p class="pline">The whole department. Or the whole campus.</p>
+          <div class="price"><span class="cur">€</span><span class="amt num" data-to="2499" data-dec="0">2,499</span><span class="per">/ year</span></div>
+          <ul class="feats"><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Up to 5,000 students</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Moodle integration</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Adaptive learning</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Advanced analytics</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Priority support</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Optional Listen Mode (TTS)</span></li></ul>
+          <a class="cta cta--yellow" href="mailto:hello@focusflow.example?subject=Loom%20University"><span>Choose plan</span><i aria-hidden="true">→</i></a>
+        </article>
+      </div>
+      <div class="plan" data-g="u" data-plan="enterprise">
+        <article class="card" data-plan="enterprise" aria-labelledby="n-enterprise">
+          <span class="rec-flag">Best fit for you</span>
+          <div class="charm charm--orange" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="25" width="13" height="18" rx="1.8" fill-opacity=".85"/><rect x="17" y="10" width="15" height="33" rx="1.8"/><rect x="32" y="20" width="12" height="23" rx="1.8" fill-opacity=".85"/><g fill="rgba(0,0,0,.28)"><rect x="21" y="15" width="3" height="4" rx=".6"/><rect x="26" y="15" width="3" height="4" rx=".6"/><rect x="21" y="23" width="3" height="4" rx=".6"/><rect x="26" y="23" width="3" height="4" rx=".6"/><rect x="21" y="31" width="3" height="4" rx=".6"/><rect x="26" y="31" width="3" height="4" rx=".6"/><rect x="7.5" y="30" width="2.6" height="3.6" rx=".6"/><rect x="11.5" y="30" width="2.6" height="3.6" rx=".6"/><rect x="35.5" y="25" width="2.6" height="3.6" rx=".6"/><rect x="39" y="25" width="2.6" height="3.6" rx=".6"/></g></svg></div>
+          <p class="tag">For Large Universities</p>
+          <h3 class="pname" id="n-enterprise">Enterprise</h3>
+          <p class="pline">For multi-campus use and custom requirements</p>
+          <div class="price price--custom"><span class="amt kin" aria-label="Custom"><span aria-hidden="true">C</span><span aria-hidden="true">u</span><span aria-hidden="true">s</span><span aria-hidden="true">t</span><span aria-hidden="true">o</span><span aria-hidden="true">m</span></span></div>
+          <ul class="feats"><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Unlimited students</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Moodle integration</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Adaptive learning</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Advanced analytics</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Dedicated support</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Optional Listen Mode (TTS)</span></li><li><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Custom requirements</span></li></ul>
+          <a class="cta cta--orange" href="mailto:hello@focusflow.example?subject=Loom%20Enterprise"><span>Contact us</span><i aria-hidden="true">→</i></a>
+        </article>
+      </div>
+    </div>
+    <p class="fine" id="fine" hidden>Study with a group or a whole course? Flip the switch to <button class="linkbtn" type="button" data-go="uni">Universities</button>. Prices in euros, VAT not included.</p>
+  </section>
+
+  <!-- ===================== MARQUEE ===================== -->
+  <section class="marq-sec" aria-label="Who it is for">
+    <p class="eyebrow">Made for universities and study groups</p>
+    <div class="marquee" aria-hidden="true"><div class="m-track"><span class="m-item"><i></i>Your University</span><span class="m-item"><i></i>Study Group</span><span class="m-item"><i></i>Physics 101</span><span class="m-item"><i></i>Campus Lab</span><span class="m-item"><i></i>Moodle-ready</span><span class="m-item"><i></i>Night Owls</span><span class="m-item"><i></i>Thesis Club</span><span class="m-item"><i></i>Exam Week</span><span class="m-item"><i></i>Your University</span><span class="m-item"><i></i>Study Group</span><span class="m-item"><i></i>Physics 101</span><span class="m-item"><i></i>Campus Lab</span><span class="m-item"><i></i>Moodle-ready</span><span class="m-item"><i></i>Night Owls</span><span class="m-item"><i></i>Thesis Club</span><span class="m-item"><i></i>Exam Week</span></div></div>
+  </section>
+
+  <!-- ===================== COMPARE ===================== -->
+  <section class="cmp-sec wrap" id="compare">
+    <h2 class="h2">Compare plans.<br><span class="mut">Squint less.</span></h2>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <caption class="vh">Feature comparison across the four Loom plans</caption>
+        <thead><tr>
+          <th scope="col"><span class="vh">Feature</span></th>
+          <th scope="col" data-acc="blue">Student</th>
+          <th scope="col" data-acc="mint">Pilot</th>
+          <th scope="col" data-acc="yellow" class="ft">University<em>Most popular</em></th>
+          <th scope="col" data-acc="orange">Enterprise</th>
+        </tr></thead>
+        <tbody><tr><th scope="row">Students included</th><td class="txt">Just you</td><td class="txt">Up to 500</td><td class="txt">Up to 5,000</td><td class="txt">Unlimited</td></tr><tr><th scope="row">Moodle integration</th><td><span class="no" aria-label="Not included">—</span></td><td data-acc="mint"><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh">Included</span></td><td data-acc="yellow"><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh">Included</span></td><td data-acc="orange"><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh">Included</span></td></tr><tr><th scope="row">Adaptive learning</th><td><span class="no" aria-label="Not included">—</span></td><td data-acc="mint"><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh">Included</span></td><td data-acc="yellow"><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh">Included</span></td><td data-acc="orange"><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh">Included</span></td></tr><tr><th scope="row">Analytics</th><td class="txt">None</td><td class="txt">Basic</td><td class="txt">Advanced</td><td class="txt">Advanced</td></tr><tr><th scope="row">Support</th><td><span class="no" aria-label="Not included">—</span></td><td class="txt">Email</td><td class="txt">Priority</td><td class="txt">Dedicated</td></tr><tr><th scope="row">Listen Mode (TTS)</th><td class="txt">Optional</td><td><span class="no" aria-label="Not included">—</span></td><td class="txt">Optional</td><td class="txt">Optional</td></tr><tr><th scope="row">Custom requirements</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td data-acc="orange"><span class="chk" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.4 6.3l2.5 2.5 4.7-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh">Included</span></td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== SIZE YOUR CAMPUS ===================== -->
+  <section class="size-sec wrap" id="size">
+    <p class="eyebrow">Size your campus</p>
+    <h2 class="h2">How many backpacks?</h2>
+    <p class="sub sub--l">Drag the dial. We&rsquo;ll point at the plan that fits.</p>
+
+    <div class="size-out">
+      <output class="big" id="sizeVal" aria-live="polite">2,400</output>
+      <span class="big-u">students</span>
+    </div>
+
+    <div class="rail" id="rail" role="slider" tabindex="0" aria-label="Number of students" aria-valuemin="100" aria-valuemax="10000" aria-valuenow="2400" aria-valuetext="2,400 students">
+      <div class="groove"><i class="fill" id="fill"></i></div>
+      <div class="knob" id="knob"><i></i></div>
+    </div>
+    <div class="rail-ticks" aria-hidden="true"><span style="--p:0">100</span><span style="--p:0.3495">500</span><span style="--p:0.8495">5,000</span><span style="--p:1">10,000+</span></div>
+
+    <p class="rec-line" id="recLine">Best fit: <b id="recName">University</b> <a class="linkbtn" href="#plans" id="recGo">See it ↑</a></p>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="faq-sec wrap" id="faq">
+    <h2 class="h2">Questions.<br><span class="mut">Answers. No small print maze.</span></h2>
+    <div class="faq">
+        <div class="qa">
+          <h3><button class="q" id="q0" aria-expanded="false" aria-controls="a0"><span>Can I cancel anytime?</span><i class="pm" aria-hidden="true"></i></button></h3>
+          <div class="a" id="a0" role="region" aria-labelledby="q0"><div><p>Student plan: yes, whenever, no awkward emails. University plans run per semester or per year, and we sort renewal terms together before you sign anything.</p></div></div>
+        </div>
+        <div class="qa">
+          <h3><button class="q" id="q1" aria-expanded="false" aria-controls="a1"><span>Is there a free trial?</span><i class="pm" aria-hidden="true"></i></button></h3>
+          <div class="a" id="a1" role="region" aria-labelledby="q1"><div><p>Yes. Try Loom first, then decide. For universities, the Pilot is the low-stakes way to test it with one course or department.</p></div></div>
+        </div>
+        <div class="qa">
+          <h3><button class="q" id="q2" aria-expanded="false" aria-controls="a2"><span>How does Moodle setup work?</span><i class="pm" aria-hidden="true"></i></button></h3>
+          <div class="a" id="a2" role="region" aria-labelledby="q2"><div><p>We connect Loom to your Moodle together with your admin, so students meet it right next to their course pages. You bring an admin, we bring the instructions and a human if you get stuck.</p></div></div>
+        </div>
+        <div class="qa">
+          <h3><button class="q" id="q3" aria-expanded="false" aria-controls="a3"><span>Do you offer student or nonprofit discounts?</span><i class="pm" aria-hidden="true"></i></button></h3>
+          <div class="a" id="a3" role="region" aria-labelledby="q3"><div><p>Talk to us. Study groups, nonprofits, small departments: if price is the blocker, we would rather find a fit than lose you.</p></div></div>
+        </div>
+        <div class="qa">
+          <h3><button class="q" id="q4" aria-expanded="false" aria-controls="a4"><span>Where is my data stored (GDPR)?</span><i class="pm" aria-hidden="true"></i></button></h3>
+          <div class="a" id="a4" role="region" aria-labelledby="q4"><div><p>By default your notes, settings and progress stay in your browser. Page text only goes to our AI service when you press “Break this page into steps”, and nothing is collected in the background. For universities we walk through data processing and GDPR details before you sign.</p></div></div>
+        </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="final-sec wrap" id="contact">
+    <div class="final">
+      <div class="charm charm--yellow charm--xl" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20c5-7 9-7 14 0s9 7 14 0 6-6 8-4" fill="none" stroke="currentColor" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 33c5-7 9-7 14 0s9 7 14 0 6-6 8-4" fill="none" stroke="currentColor" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/></svg></div>
+      <h2 class="fh">There&rsquo;s a plan<br>for that.</h2>
+      <p class="sub">Start with one student. Grow into a campus.</p>
+      <a class="pill pill--y pill--lg" href="index.html#install">Get started free <i aria-hidden="true">→</i></a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <span>Loom · Made at MERIThon · Vilnius Tech</span>
+  <span>Prices in euros, VAT not included. A study-support tool, not a medical product.</span>
+</footer>
+
+<script src="js/smooth.js"></script>
+<script src="js/pricing.js"></script>
+</body>
+</html>

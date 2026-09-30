@@ -1,0 +1,57 @@
+/* Loom side panel: THE theme file. Every colour, radius and font lives here.
+   Switch look with <html data-theme="dark|light"> and calm everything with <html data-quiet="1">. */
+@font-face { font-family: "Bagel Fat One"; src: url("../assets/fonts/bagel-fat-one.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Inter Tight"; src: url("../assets/fonts/inter-tight.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
+
+:root {
+  /* shape + type + motion (same tokens as the landing page) */
+  --display: "Bagel Fat One", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --sans: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --r-card: 26px; --r-pill: 999px;
+  --spring: cubic-bezier(.34, 1.56, .64, 1); --ease: cubic-bezier(.2, .8, .2, 1);
+  /* ambient blob colours (background only) */
+  --coral: #ffa97a; /* peach */ --pink: #ff2e93; --mint: #6dffa8; --teal: #5fe0ff; --butter: #ffe23d;
+  --rainbow: linear-gradient(90deg, #ff2e93, #5fe0ff, #6dffa8, #ffe23d);
+}
+
+[data-theme="dark"], :root:not([data-theme]) {
+  color-scheme: dark;
+  --bg: #0a0a0a;
+  --surface: rgba(255, 255, 255, .04);
+  --surface-2: rgba(255, 255, 255, .07);
+  --solid: #151412;
+  --line: rgba(255, 255, 255, .08);
+  --line-2: rgba(255, 255, 255, .17);
+  --text: #f6f0e6;
+  --muted: rgba(246, 240, 230, .64);
+  --accent: #ff2e93;          /* landing-page pink: focus rings, switches, highlights */
+  --accent-text: #ff6fb5;     /* accent as text: AA on near-black */
+  --primary: #f6f0e6; --on-primary: #0a0a0a;
+  --scrim: rgba(10, 10, 10, .66);
+  --bar: rgba(10, 10, 10, .72);
+  --blob: 1;
+  --grain: .05;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fbfbf9;
+  --surface: rgba(11, 11, 11, .04);
+  --surface-2: rgba(11, 11, 11, .07);
+  --solid: #ffffff;
+  --line: rgba(11, 11, 11, .10);
+  --line-2: rgba(11, 11, 11, .20);
+  --text: #0b0b0b;
+  --muted: rgba(11, 11, 11, .64);
+  --accent: #e0207f;
+  --accent-text: #b8106a;
+  --primary: #0b0b0b; --on-primary: #fbfbf9;
+  --scrim: rgba(251, 251, 249, .78);
+  --bar: rgba(251, 251, 249, .8);
+  --blob: .5;
+  --grain: .035;
+}
+
+/* Quiet mode: freeze the blobs, dim the gradients, no bounces (see style.css) */
+[data-quiet="1"] { --blob: .4; }
+[data-quiet="1"][data-theme="light"] { --blob: .25; }

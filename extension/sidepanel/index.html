@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loom</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div class="blobs" aria-hidden="true">
+    <i class="b b1"></i><i class="b b2"></i><i class="b b3"></i><i class="b b4"></i><i class="b b5"></i>
+    <div class="grain"></div>
+  </div>
+
+  <header class="top">
+    <div class="top-r1">
+      <div class="brand"><span class="wm">Loom</span></div>
+      <button id="themeBtn" class="iconbtn" type="button" aria-label="Switch theme"></button>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button type="button" role="tab" data-tab="focus" class="on" aria-selected="true">Focus</button>
+      <button type="button" role="tab" data-tab="notes" aria-selected="false">Notes</button>
+      <button type="button" role="tab" data-tab="settings" aria-selected="false">Settings</button>
+    </nav>
+  </header>
+
+  <div id="progress" class="progress" hidden>
+    <div class="pg-row"><span id="pgLabel" class="lab"><i></i>Progress</span><span id="pgPct">0%</span></div>
+    <div class="pg-track" role="progressbar" aria-label="Session progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="pgFill"></i></div>
+  </div>
+
+  <main>
+    <!-- ================= FOCUS ================= -->
+    <section id="tab-focus" role="tabpanel">
+
+      <!-- empty state -->
+      <div id="screen-start" class="screen">
+        <p class="lab"><i></i>Your goal</p>
+        <button id="goalChip" class="field goalbtn" type="button" aria-label="Set your goal"><span id="goalText">What's your one goal?</span></button>
+        <input id="goalInput" class="field" hidden maxlength="90" placeholder="What's your one goal? (Enter)" aria-label="Your goal">
+
+        <h1 class="display h1">Let's make this easy.</h1>
+        <p class="sub">Open what you want to study and I'll turn it into small, calm steps.</p>
+
+        <button id="btnSteps" class="btn-primary" type="button">Break this page into steps ✨</button>
+        <p class="tip">Tip: highlight a section first.</p>
+
+        <button id="btnPasteToggle" class="link" type="button" aria-expanded="false" aria-controls="pasteWrap">Paste text or a file <span aria-hidden="true">→</span></button>
+        <div id="pasteWrap" class="pastewrap" hidden>
+          <div id="dropzone" class="dropzone">
+            <textarea id="pasteBox" class="area" rows="5" placeholder="Paste text here, or drop a PDF / Word file anywhere on this panel" aria-label="Text to turn into steps"></textarea>
+            <div class="dz-foot">
+              <span class="dz-hint">PDF · Word (.docx) · .txt</span>
+              <button id="btnFile" class="link" type="button">Choose a file <span aria-hidden="true">→</span></button>
+            </div>
+            <input id="fileInput" type="file" accept=".pdf,.docx,.txt,.md,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain" hidden>
+          </div>
+          <p id="fileStatus" class="tip" role="status" hidden></p>
+          <button id="btnPaste" class="link" type="button">Make steps from this <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+      <!-- active step: mirrors the landing showcase card -->
+      <div id="screen-card" class="screen" hidden>
+        <p class="lab"><i></i>01 / Current focus</p>
+        <button id="cardGoalBtn" class="goal-display display" type="button" aria-label="Change your goal"><span id="cardGoal">Your goal</span><em class="dot" aria-hidden="true"></em></button>
+        <input id="cardGoalInput" class="field" hidden maxlength="90" placeholder="What's your one goal? (Enter)" aria-label="Your goal">
+
+        <div class="rule"></div>
+
+        <p class="lab hot"><i></i>Next step for you</p>
+        <p class="course" id="cardCourse"></p>
+        <h2 class="display step" id="cardTitle"></h2>
+        <p class="meta"><span id="cardMin"></span><span id="cardWords"></span></p>
+        <p id="cardKey" class="keytext"></p>
+
+        <button id="btnStart" class="cta" type="button"><span>Start Focus Mode</span><i aria-hidden="true">→</i></button>
+        <div class="segs" id="cardSeg" aria-hidden="true"></div>
+
+        <div id="dueBox" class="glass duebox" hidden>
+          <span id="dueText"></span>
+          <button id="btnSaveDue" class="link" type="button">Save to notes <span aria-hidden="true">→</span></button>
+        </div>
+
+        <div class="linkrow">
+          <button id="btnReadSummary" class="link" type="button">Listen to summary</button>
+          <button id="btnAllSteps" class="link" type="button" aria-expanded="false" aria-controls="stepList">All steps</button>
+        </div>
+        <ol id="stepList" class="steplist" hidden></ol>
+        <div class="foot"><button id="btnStartOver" class="link" type="button">Start over</button><span id="layerBadge" class="badge"></span></div>
+      </div>
+
+      <!-- focus mode -->
+      <div id="screen-focus" class="screen" hidden>
+        <div class="segs" id="focusSeg" aria-hidden="true"></div>
+        <div class="steplabel"><span id="stepCount" class="lab"></span><button id="btnExit" class="link" type="button">End session</button></div>
+        <div class="ringwrap">
+          <svg viewBox="0 0 120 120" class="ring" aria-hidden="true">
+            <circle class="track" cx="60" cy="60" r="52"></circle>
+            <circle id="ringArc" class="arc" cx="60" cy="60" r="52"></circle>
+          </svg>
+          <div class="ringtext"><div id="timeText">0:00</div><button id="btnPause" class="link" type="button">Pause</button></div>
+        </div>
+        <h2 class="display step sm" id="stepTitle"></h2>
+        <div id="stepBody" class="body reading"></div>
+        <div id="keyBox" class="key"><p class="lab"><i></i>Key idea</p><p id="keyIdea"></p></div>
+        <div class="linkrow">
+          <button id="btnRead" class="link" type="button">Listen</button>
+          <button id="btnLocate" class="link" type="button">Show on page</button>
+          <button id="btnDump" class="link" type="button" aria-expanded="false" aria-controls="dumpRow">Brain dump</button>
+        </div>
+        <div id="dumpRow" class="dump" hidden><input id="dumpInput" class="field" placeholder="Quick thought… (Enter to save)" aria-label="Quick thought"></div>
+        <div class="actions">
+          <button id="btnNext" class="btn-primary" type="button">Next →</button>
+          <button id="btnConfused" class="link" type="button">I don't understand</button>
+        </div>
+      </div>
+
+      <!-- check-in -->
+      <div id="screen-feedback" class="screen" hidden>
+        <p class="lab"><i></i>Check-in</p>
+        <h2 class="display h1 sm">How did that step feel?</h2>
+        <p class="sub">One tap. It helps me adapt to you.</p>
+        <div id="fbGrid" class="fbgrid"></div>
+        <button id="btnMoreFb" class="link" type="button">More options <span aria-hidden="true">→</span></button>
+      </div>
+
+      <!-- break -->
+      <div id="screen-break" class="screen" hidden>
+        <p class="lab"><i></i>Little break</p>
+        <h2 class="display h1 sm">Breathe. You've earned it.</h2>
+        <div id="breakMedia" class="media"></div>
+        <p id="breakTip" class="sub"></p>
+        <div id="breakTimer" class="bigtime"></div>
+        <button id="btnBackToIt" class="btn-primary" type="button">I'm ready →</button>
+        <button id="btnSkipBreak" class="link" type="button">Skip break</button>
+      </div>
+
+      <!-- done -->
+      <div id="screen-done" class="screen" hidden>
+        <p class="lab"><i></i>All done</p>
+        <h2 class="display h1">Nice. You did it.</h2>
+        <p id="doneText" class="sub"></p>
+        <button id="btnNew" class="btn-primary" type="button">Start something new</button>
+        <button id="btnDoneRead" class="link" type="button">Listen to summary</button>
+      </div>
+    </section>
+
+    <!-- ================= NOTES ================= -->
+    <section id="tab-notes" role="tabpanel" hidden>
+      <div class="screen">
+        <p class="lab"><i></i>Notes &amp; deadlines</p>
+        <h1 class="display h1 sm">Park it here.</h1>
+        <p class="sub">So your brain doesn't have to hold it.</p>
+        <button id="btnNewNote" class="btn-primary" type="button">New note +</button>
+        <ul id="noteList" class="notes"></ul>
+        <p id="noteEmpty" class="sub empty">Nothing saved yet. Your future self says thanks.</p>
+      </div>
+      <form id="noteForm" class="capture">
+        <input id="noteText" class="field" placeholder="Quick capture…" required maxlength="200" aria-label="Note">
+        <input id="noteDue" class="field due" type="datetime-local" aria-label="Due date (optional)">
+        <button class="round go" type="submit" aria-label="Add note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+    </section>
+
+    <!-- ================= SETTINGS ================= -->
+    <section id="tab-settings" role="tabpanel" hidden>
+      <div class="screen">
+        <h1 class="display h1 sm">Make it yours.</h1>
+
+        <label class="sw big"><input type="checkbox" id="setQuiet"><i></i><span>Quiet mode<small>No nudges. Blobs freeze, buddy stays put.</small></span></label>
+
+        <p class="lab"><i></i>Look</p>
+        <div id="themeRow" class="chips" role="group" aria-label="Theme"></div>
+
+        <p class="lab"><i></i>Your buddy</p>
+        <div id="petRow" class="pets"></div>
+        <label class="sw"><input type="checkbox" id="setPetOnPage"><i></i><span>Show my buddy on web pages</span></label>
+
+        <p class="lab"><i></i>Nudges</p>
+        <div class="slide"><div class="row"><label for="setNudge">Buddy checks in every</label><output id="outNudge"></output></div><input type="range" id="setNudge" min="0" max="6" step="1"></div>
+        <div class="slide"><div class="row"><label for="setBreak">Break reminder after</label><output id="outBreak"></output></div><input type="range" id="setBreak" min="0" max="5" step="1"></div>
+        <div class="linkrow">
+          <button id="btnQuiet1h" class="link" type="button">Quiet for 1 hour</button>
+          <button id="btnTestNudge" class="link" type="button">Try a nudge now</button>
+        </div>
+
+        <p class="lab"><i></i>Reading &amp; listening</p>
+        <div class="slide"><div class="row"><label for="setFont">Text size</label><output id="outFont"></output></div><input type="range" id="setFont" min="0.9" max="1.4" step="0.05"></div>
+        <div class="slide"><div class="row"><label for="setRate">Listen Mode voice speed</label><output id="outRate"></output></div><input type="range" id="setRate" min="0.7" max="1.4" step="0.05"></div>
+        <label class="sw"><input type="checkbox" id="setBionic"><i></i><span>Bold word starts</span></label>
+        <label class="sw"><input type="checkbox" id="setDuck"><i></i><span>Lower music while listening</span></label>
+
+        <p class="lab"><i></i>Today</p>
+        <div id="todayStats" class="stats"></div>
+
+        <details class="adv">
+          <summary class="link">Advanced</summary>
+          <label class="fld">AI service URL<input id="setApi" class="field" placeholder="https://your-worker.workers.dev"></label>
+          <p class="tip">Leave empty to use built-in offline mode.</p>
+          <label class="fld">Dashboard website address<input id="setSite" class="field" placeholder="https://focusflow.example"></label>
+          <p class="tip">Lets your dashboard read your stats. localhost always works.</p>
+          <div class="linkrow"><button id="btnExport" class="link" type="button">Export my data</button><button id="btnWipe" class="link" type="button">Reset all my data</button></div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <section id="stage" class="stage" aria-label="Your study buddy">
+    <div id="bubble" class="bubble" hidden>
+      <button id="bubbleX" class="bx" type="button" aria-label="Dismiss"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div id="bubbleText" class="display"></div>
+      <div id="bubbleOpts" class="opts"></div>
+    </div>
+    <div id="confetti" class="confetti" aria-hidden="true"></div>
+  </section>
+
+  <div id="ttsBar" class="ttsbar" hidden>
+    <span>Listening · music lowered</span>
+    <span><button id="btnStopTts" class="link" type="button">Stop</button><button id="btnStopMusic" class="link" type="button">Stop music</button></span>
+  </div>
+
+  <footer class="player" id="player">
+    <button id="btnPlay" class="round play" type="button" aria-label="Play music"></button>
+    <div class="soundpick">
+      <select id="trackSel" aria-label="Sound"></select>
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+    </div>
+    <input id="vol" type="range" min="0" max="1" step="0.05" aria-label="Volume">
+  </footer>
+  <div id="toast" class="toast" role="status" hidden></div>
+</div>
+
+<script src="../vendor/pdf.min.js"></script>
+<script src="../shared/config.js"></script>
+<script src="../shared/store.js"></script>
+<script src="../shared/fallback.js"></script>
+<script src="../shared/ai.js"></script>
+<script src="../shared/pet.js"></script>
+<script src="../shared/roam.js"></script>
+<script src="files.js"></script>
+<script src="music.js"></script>
+<script src="tts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
