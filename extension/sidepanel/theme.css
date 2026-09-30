@@ -16,8 +16,8 @@
 
 [data-theme="dark"], :root:not([data-theme]) {
   color-scheme: dark;
-  --bg: #0a0a0a;
-  --surface: rgba(255, 255, 255, .04);
+  --bg: #0b0b0b;
+  --surface: rgba(255, 255, 255, .035);
   --surface-2: rgba(255, 255, 255, .07);
   --solid: #151412;
   --line: rgba(255, 255, 255, .08);
@@ -29,9 +29,9 @@
   --primary: #f6f0e6; --on-primary: #0a0a0a;
   --scrim: rgba(10, 10, 10, .66);
   --bar: rgba(10, 10, 10, .72);
-  --blob: 1;
+  --blob: .3;
   --scene-op: 1;
-  --grain: .05;
+  --grain: .04;
 }
 
 [data-theme="light"] {
